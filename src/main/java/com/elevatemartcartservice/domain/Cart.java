@@ -1,10 +1,9 @@
 package com.elevatemartcartservice.domain;
 
-import com.elevatemartcartservice.dto.CartStatus;
 import com.elevatemartcartservice.dto.Product;
+import com.elevatemartcartservice.dto.convertor.ProductConverter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,8 +22,9 @@ public class Cart {
 
     private String username;
 
-//    @Embedded
-//    private List<Product> productList;
+    @ElementCollection
+    @Convert(converter = ProductConverter.class)
+    private List<Product> productList;
     private String discountCoupon;
 
     private double taxAmount;

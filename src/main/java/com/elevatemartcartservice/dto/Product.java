@@ -1,8 +1,8 @@
 package com.elevatemartcartservice.dto;
 
-import jakarta.persistence.Basic;
+import com.elevatemartcartservice.dto.convertor.TaxConverter;
+import jakarta.persistence.Convert;
 import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 
-//@Embeddable
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Product {
     private Long id;
     private String sku;
@@ -23,7 +23,7 @@ public class Product {
     private Boolean isTaxable;
     private Double price;
     private String imageUrl;
-    @Basic
     @ElementCollection
+    @Convert(converter = TaxConverter.class)
     private List<Tax> taxes;
 }
