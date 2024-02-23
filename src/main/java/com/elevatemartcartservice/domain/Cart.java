@@ -1,6 +1,5 @@
 package com.elevatemartcartservice.domain;
 
-import com.elevatemartcartservice.dto.Product;
 import com.elevatemartcartservice.dto.enums.CartStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

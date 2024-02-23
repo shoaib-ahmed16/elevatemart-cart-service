@@ -18,7 +18,6 @@ public class CartController {
     public ResponseEntity<String> addProductToCart(@RequestBody CartProduct cartProductDto) throws InterruptedException {
         return new ResponseEntity<>(cartService.addToCart(cartProductDto), HttpStatus.OK);
     }
-
     @PostMapping("/removeFromCart")
     public ResponseEntity<String> removeProductFromCart(@RequestBody CartProduct cartProductDto) throws InterruptedException {
         return new ResponseEntity<>(cartService.removeFromCart(cartProductDto), HttpStatus.OK);

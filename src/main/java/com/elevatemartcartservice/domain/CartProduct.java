@@ -26,4 +26,3 @@ public class CartProduct {
     @JsonIgnore
     private Cart cart;
 }
-

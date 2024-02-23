@@ -22,10 +22,9 @@ public class Coupon {
     private double discountPercentage;
     private double minimumCartTotalAmount;
 
-    @OneToMany(mappedBy = coupon)
+    @OneToMany(mappedBy = "coupon")
     @JsonIgnore
     private List<Cart> carts;
 
 
 }
-

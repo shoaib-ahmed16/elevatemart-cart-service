@@ -1,9 +1,9 @@
 package com.elevatemartcartservice.service;
 
-import com.elevatemartcartservice.dto.CartProductDto;
+import com.elevatemartcartservice.domain.CartProduct;
 
 public interface CartService {
-     String addToCart(CartProductDto cartProductDto);
-    String removeFromCart(CartProductDto cartProductDto);
-    String updateToCart(CartProductDto cartProductDto);
+    String addToCart(CartProduct cartProductDto) throws InterruptedException;
+    String removeFromCart(CartProduct cartProductDto);
+    String updateToCart(CartProduct cartProductDto);
 }
