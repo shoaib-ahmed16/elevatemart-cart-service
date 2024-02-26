@@ -71,6 +71,7 @@ public class CartServiceImpl implements CartService {
                 updateCart.setTotal(cal.add(updateCart.getTotal() , cal.add(totalAmount , taxAmount)));
                 updateCart.setStatus(CartStatus.PENDING);
                 updateCart.setCountryCode(Constants.COUNTRY.getStr());
+                updateCart.setTotalQuantity(cartProduct.getQuantity());
             }
             cartRepo.save(updateCart);
             return "Product is Add successfully.";
@@ -172,7 +173,7 @@ public class CartServiceImpl implements CartService {
             }
             updateCart.setStatus(CartStatus.PENDING);
             updateCart.setCountryCode(Constants.COUNTRY.getStr());
-            updateCart.setTotalQuantity(cal.addInts(updateCart.getTotalQuantity() , cartProduct.getQuantity()));
+            updateCart.setTotalQuantity(cartProduct.getQuantity());
             cartRepo.save(updateCart);
             return "Product is updated successfully.";
         }catch (CartNotFoundException cnfe){
