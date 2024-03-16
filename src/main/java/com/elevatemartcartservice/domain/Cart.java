@@ -24,8 +24,8 @@ public class Cart {
 
     private String username;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
-    private List<CartProduct> products;
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER)
+    private List<CartProduct> products =new ArrayList<>();
     @ManyToOne
     @JoinColumn(name = "coupon_id")
     private Coupon coupon;
@@ -41,9 +41,6 @@ public class Cart {
     private CartStatus status;
 
     public void addProduct(CartProduct product){
-        if(Objects.isNull(this.products)){
-            this.products =new ArrayList<>();
-        }
         this.products.add(product);
         product.setCart(this);
     }

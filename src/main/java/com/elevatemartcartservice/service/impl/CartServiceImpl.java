@@ -55,7 +55,7 @@ public class CartServiceImpl implements CartService {
             Cart updateCart;
             if (cart.isPresent()) {
                 updateCart = cart.get();
-                updateCart.getProducts().add(cartProduct);
+                updateCart.addProduct(cartProduct);
                 updateCart.setTaxAmount(cal.add(updateCart.getTaxAmount(),taxAmount));
                 updateCart.setSubTotal(cal.add(updateCart.getSubTotal() , totalAmount));
                 updateCart.setTotal(cal.add(updateCart.getTotal() , cal.add(totalAmount , taxAmount)));
@@ -107,7 +107,7 @@ public class CartServiceImpl implements CartService {
             if(updateCart.getProducts().size()==Constants.MIN_SIZE_CART_PRODUCT_LIST.getValue()){
                 cartRepo.delete(cart.get());
             }else{
-                updateCart.getProducts().add(cartProduct);
+                updateCart.getProducts().remove(cartProduct);
                 updateCart.setTaxAmount(cal.subtract(updateCart.getTaxAmount() ,taxAmount));
                 updateCart.setSubTotal(cal.subtract(updateCart.getSubTotal() , totalAmount));
                 updateCart.setTotal(cal.subtract(updateCart.getTotal() , cal.subtract(totalAmount , taxAmount)));
