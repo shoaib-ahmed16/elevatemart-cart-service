@@ -8,12 +8,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v1/cart")
 public class CartController {
 
     @Autowired
     private CartService cartService;
 
+    @GetMapping("/hello")
+    public ResponseEntity<String> getHello(){
+        return  new ResponseEntity<>("Hello Testing",HttpStatus.OK);
+    }
     @PostMapping("/addToCart")
     public ResponseEntity<String> addProductToCart(@RequestBody CartProduct cartProductDto) throws InterruptedException {
         return new ResponseEntity<>(cartService.addToCart(cartProductDto), HttpStatus.OK);

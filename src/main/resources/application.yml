@@ -1,7 +1,5 @@
 server:
   port: 9800
-  servlet:
-    context-path: /cart-service-elevatemart
 
 spring:
   datasource:
@@ -17,4 +15,12 @@ spring:
     hibernate:
       ddl-auto: update
     open-in-view: true
+
+jwt:
+  security:
+    token:
+      secret_key: abMcdefgIhijk4lmnoXpqrsZtuvwxyzYafeA
+      issuer: ashoaib.security@gmail.com
+      subject: emartSalesPlatform@gmail.com
+      earlierBefore: 300
 
