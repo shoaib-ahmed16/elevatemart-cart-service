@@ -11,7 +11,7 @@ import com.elevatemartcartservice.exception.ProductServiceException;
 import com.elevatemartcartservice.exception.ProductServiceSkuProductNotFound;
 import com.elevatemartcartservice.repository.CartRepository;
 import com.elevatemartcartservice.service.CartService;
-import com.elevatemartcartservice.service.MicroServicesCallRouter;
+import com.elevatemartcartservice.service.ProductServiceFeignClient;
 import com.elevatemartcartservice.utils.Calculator;
 import com.elevatemartcartservice.utils.ProductFetch;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +30,7 @@ import java.util.concurrent.Future;
 public class CartServiceImpl implements CartService {
 
     @Autowired
-    private MicroServicesCallRouter callRouter;
+    private ProductServiceFeignClient callRouter;
     @Autowired
     private CartRepository cartRepo;
 
