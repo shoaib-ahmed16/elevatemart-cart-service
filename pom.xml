@@ -13,20 +13,20 @@
 	<name>elevatemart-cart-service</name>
 	<description>Elevate mart cart microservice</description>
 	<properties>
-		<eureka.netfix.clien.version>4.1.0</eureka.netfix.clien.version>
 		<spring.cloud.openfeign.version>4.1.0</spring.cloud.openfeign.version>
+		<eureka.netfix.clien.version>4.1.0</eureka.netfix.clien.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-			<version>${eureka.netfix.clien.version}</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 			<version>${spring.cloud.openfeign.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<version>${eureka.netfix.clien.version}</version>
 		</dependency>
 	</dependencies>
 

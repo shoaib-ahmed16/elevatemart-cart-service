@@ -28,3 +28,6 @@ jwt:
       subject: emartSalesPlatform@gmail.com
       earlierBefore: 300
 
+feign:
+  hystrix:
+    enable: true
