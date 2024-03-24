@@ -1,0 +1,38 @@
+logging:
+  level:
+    org:
+      springframework: debug
+
+server:
+  port: 9800
+
+spring:
+  application:
+    name: cart-micro-service
+  zipkin:
+    base-url: http://localhost:9411/
+  datasource:
+    url: jdbc:mysql://localhost:3306/elevatemart
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    jdbc:
+      repositories:
+        enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: true
+
+jwt:
+  security:
+    token:
+      secret_key: abMcdefgIhijk4lmnoXpqrsZtuvwxyzYafeA
+      issuer: ashoaib.security@gmail.com
+      subject: emartSalesPlatform@gmail.com
+      earlierBefore: 300
+
+feign:
+  hystrix:
+    enable: true

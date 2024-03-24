@@ -1,7 +1,0 @@
-spring:
-    cloud:
-      discovery:
-        enable: true
-      config:
-        discovery:
-          service-id: elevatemart-spring-cloud-config
